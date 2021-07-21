@@ -12,6 +12,7 @@ The file is called results.txt
 ### Dependencies
 
 * Tested on python 3.9.6 on Windows 10
+* Tested on python 3.9.6 on macOS Big Sur 11.4
 
 
 ### Installing
