@@ -1,6 +1,6 @@
-# Project Title
+# Coin filp
 
-Coin flip.
+
 
 ## Description
 
