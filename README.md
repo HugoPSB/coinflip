@@ -21,7 +21,7 @@ To install do
 ```
 $ git clone https://github.com/HugoPSB/coinflip.git
 ```
-
+* Run launcher.py for it to work
 ## Help
 
 If not working make sure python is up to date and nothing is changine the results.txt

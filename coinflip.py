@@ -1,38 +1,50 @@
 import random
-from datetime import date
 from datetime import datetime
 
-heads = 0
-tails = 0
+class coinFlip:
+    def __init__(self):
+        self.input = ""
+        self.coin_rand = 0
+        self.tails = 0
+        self.heads = 0
 
+    def user_input(self):
+        self.input = input("Would you like to flip a coin or write results or close? (y/w/c): ")
+        self.act_on_input(self.input)
 
-while True:
-    #get what user wants to do
-    get_input = input("Would you like to flip a coin or write results or close? (y/r/c): ")
-    if get_input == "y":
-        flip_coin = True
-    elif get_input == "r":#write reseults to file
+    def act_on_input(self, input):
+        if input == "y":
+            self.flip()
+        elif input == "w":
+            self.write_log(self.heads, self.tails)
+        else:
+            print("Good bye")
+            
+    '''
+    This makes a random number of 1 or 2
+    If number is 1 it is heads
+    If number is 2 it is tails
+    '''
+    def flip(self):
+        coin_rand = random.randint(1,2)
+
+        if coin_rand == 1:
+            self.heads = self.heads + 1
+            print(f"You got Heads. There has been {self.heads} heads and {self.tails} tails so far")
+            
+
+        elif coin_rand == 2:
+            self.tails = self.tails + 1
+            print(f"You got Tails. There has been {self.heads} heads and {self.tails} tails so far")
+            
+        else:
+            print(f"Random number error. Num was {self.coin_rand}")
+
+    def write_log(self, heads, tails):
         now = datetime.now()
         time = now.strftime("%H:%M:%S")
-        date = date.today()
+        date = datetime.today()
+
         f = open("results.txt", "a")
-        f.write(f"On {date} at {time} you got {heads} and {tails} tails.\n")
-        f.close()
-        flip_coin = False
-    else:
-        print("Good bye") 
-        break
-
-
-
-    #Gen random numbers and chek if even or odd
-    if flip_coin == True:
-        coin_num = random.randint(1,2)
-        if (coin_num % 2) == 0: #even = heads
-            print(f"You got Heads. There has been {heads} heads and {tails} tails so far")
-            heads = heads + 1
-            flip_coin = False
-        else:   #if not odd then tails
-            print(f"You got Tails. There has been {heads} heads and {tails} tails so far")
-            tails = tails + 1
-            flip_coin = False
+        f.write(f"On {date} you got {heads} heads and {tails} tails.\n")
+        f.close
