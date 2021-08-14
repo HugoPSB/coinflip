@@ -1,7 +1,10 @@
 from coinflip import coinFlip
-import random
+from coinflip import textScreens
 
 cf = coinFlip()
+men = textScreens()
+
+men.title()
 
 while True: 
     cf.user_input()

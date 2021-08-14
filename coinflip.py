@@ -1,6 +1,17 @@
 import random
 from datetime import datetime
 
+class textScreens:
+    def title(self):
+        print("   _____      _         ______ _ _       ")
+        print("  / ____|    (_)       |  ____| (_)      ")
+        print(" | |     ___  _ _ __   | |__  | |_ _ __  ")
+        print(" | |    / _ \| | '_ \  |  __| | | | '_ \ ")
+        print(" | |___| (_) | | | | | | |    | | | |_) |")
+        print("  \_____\___/|_|_| |_| |_|    |_|_| .__/ ")
+        print("                                  | |    ")
+        print("                                  |_|    ")
+
 class coinFlip:
     def __init__(self):
         self.input = ""
@@ -18,8 +29,7 @@ class coinFlip:
         elif input == "w":
             self.write_log(self.heads, self.tails)
         else:
-            print("Good bye")
-            
+            raise KeyError("Good Bye")
     '''
     This makes a random number of 1 or 2
     If number is 1 it is heads
